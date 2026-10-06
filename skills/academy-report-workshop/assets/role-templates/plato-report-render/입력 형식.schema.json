@@ -1,0 +1,144 @@
+{
+  "$defs": {
+    "Counts": {
+      "additionalProperties": false,
+      "properties": {
+        "total": {
+          "minimum": 0,
+          "title": "Total",
+          "type": "integer"
+        },
+        "dated": {
+          "minimum": 0,
+          "title": "Dated",
+          "type": "integer"
+        },
+        "completed": {
+          "minimum": 0,
+          "title": "Completed",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "total",
+        "dated",
+        "completed"
+      ],
+      "title": "Counts",
+      "type": "object"
+    },
+    "Record": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "date": {
+          "title": "Date",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "excerpt": {
+          "title": "Excerpt",
+          "type": "string"
+        },
+        "observation": {
+          "title": "Observation",
+          "type": "string"
+        },
+        "teaching": {
+          "title": "Teaching",
+          "type": "string"
+        },
+        "next_step": {
+          "title": "Next Step",
+          "type": "string"
+        },
+        "domains": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "Domains",
+          "type": "array"
+        }
+      },
+      "required": [
+        "code",
+        "date",
+        "kind",
+        "title",
+        "excerpt",
+        "observation",
+        "teaching",
+        "next_step",
+        "domains"
+      ],
+      "title": "Record",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "fields": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Fields",
+      "type": "object"
+    },
+    "domains": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 6,
+      "minItems": 6,
+      "title": "Domains",
+      "type": "array"
+    },
+    "records": {
+      "items": {
+        "$ref": "#/$defs/Record"
+      },
+      "maxItems": 4,
+      "minItems": 0,
+      "title": "Records",
+      "type": "array"
+    },
+    "counts": {
+      "$ref": "#/$defs/Counts"
+    },
+    "student_name": {
+      "minLength": 1,
+      "title": "Student Name",
+      "type": "string"
+    },
+    "class_label": {
+      "title": "Class Label",
+      "type": "string"
+    },
+    "report_month": {
+      "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+      "title": "Report Month",
+      "type": "string"
+    }
+  },
+  "required": [
+    "fields",
+    "domains",
+    "records",
+    "counts",
+    "student_name",
+    "class_label",
+    "report_month"
+  ],
+  "title": "ReportInput",
+  "type": "object"
+}
