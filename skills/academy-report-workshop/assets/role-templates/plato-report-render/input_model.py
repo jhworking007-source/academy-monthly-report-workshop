@@ -15,7 +15,7 @@ class Counts(BaseModel):
     model_config = ConfigDict(frozen=True, extra="forbid")
     total: int = Field(ge=0)
     dated: int = Field(ge=0)
-    completed: int = Field(ge=0)
+    completed: int | None = Field(default=None, ge=0)
 class ReportInput(BaseModel):
     model_config = ConfigDict(frozen=True, extra="forbid")
     fields: dict[str, str]

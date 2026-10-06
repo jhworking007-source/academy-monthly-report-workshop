@@ -27,7 +27,7 @@ def main(content: Path, output: Path, variant: Variant = Variant.FULL) -> None:
         raise typer.BadParameter("Observation domain index must be between 0 and 5")
     if variant == Variant.FULL and len(data.records) != 4:
         raise typer.BadParameter("Full layout requires four selected observations; use limited for insufficient records")
-    if max(data.counts.dated, data.counts.completed) > data.counts.total:
+    if max(data.counts.dated, data.counts.completed or 0) > data.counts.total:
         raise typer.BadParameter("Record counts cannot exceed total")
     year, month = map(int, data.report_month.split("-"))
     last = calendar.monthrange(year, month)[1]

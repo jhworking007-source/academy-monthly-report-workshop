@@ -14,15 +14,22 @@
           "type": "integer"
         },
         "completed": {
-          "minimum": 0,
-          "title": "Completed",
-          "type": "integer"
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Completed"
         }
       },
       "required": [
         "total",
-        "dated",
-        "completed"
+        "dated"
       ],
       "title": "Counts",
       "type": "object"

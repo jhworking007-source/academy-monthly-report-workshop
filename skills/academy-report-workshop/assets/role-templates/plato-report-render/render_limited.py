@@ -9,7 +9,7 @@ def render(data: ReportInput, output: Path) -> None:
     p.header(data.fields['text_095'], data.fields['text_096'], 2)
     p.paragraph(data.fields['text_097'], (44, 192, 507, 90), (24, True, INK))
     p.paragraph(data.fields['text_098'], (44, 311, 507, 64), (12, False, GREY))
-    for x, value, label in [(44, f'{data.counts.total:02d}', data.fields['text_099']), (220, f'{data.counts.dated:02d}', data.fields['text_101']), (396, f'{data.counts.completed:02d}', data.fields['text_103'])]:
+    for x, value, label in [(44, f'{data.counts.total:02d}', data.fields['text_099']), (220, f'{data.counts.dated:02d}', data.fields['text_101']), (396, (f'{data.counts.completed:02d}' if data.counts.completed is not None else '미확인'), data.fields['text_103'])]:
         p.text(value, (x, 418, 155), (41, False, INK))
         p.text(label, (x, 479, 155), (10, True, GREY))
     p.text(data.fields['text_104'], (44, 556, 507), (14, True, INK))
