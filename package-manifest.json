@@ -24,7 +24,7 @@
     "assets/role-templates/plato-report-render/입력 형식.schema.json": "67f505c55f07a47f52868f152d0f6e56da171c2c7ae4c239bff6fa12e82ca3bd",
     "assets/role-templates/review-report/SKILL.md": "4257cb20e2d0ee1cdaed5a4d26950e1f3368d57928a0778cf0fc40f17c443f64",
     "assets/role-templates/send-report/SKILL.md": "c19df9aadf4ad29dc3395fb1d2cd260292fc4ce372bb5f2233e3fb5b64ca7dc6",
-    "assets/role-templates/write-report/SKILL.md": "8c3d54bf5d52e11433640cb92932fd814347d8a9f6ebe38eb10b05d5c619a0d1",
+    "assets/role-templates/write-report/SKILL.md": "7eeb884ee7525efaef4e96615d83322fbd177e8586c2175036eba9f1bba97d37",
     "assets/role-templates/plato-report-render/assets/logo.png": "cdbabc743365db6d712c2f03e6dd4620d4124336c2f24c7bda75d82180223059"
   },
   "hash_basis": "SHA-256 of exact Git blob bytes delivered by the repository archive. For verification, use archive download or a checkout preserving LF."
